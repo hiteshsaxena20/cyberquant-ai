@@ -1,0 +1,47 @@
+# ─── Python ───────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+venv/
+env/
+.venv/
+*.db
+
+# ─── Node / Frontend ─────────────────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/build/
+*.tsbuildinfo
+
+# ─── Environment ──────────────────────────────────────────────────────
+.env
+.env.local
+.env.production
+*.env
+
+# ─── IDE ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ─── Docker ───────────────────────────────────────────────────────────
+docker-compose.override.yml
+
+# ─── ML Models ────────────────────────────────────────────────────────
+*.pkl
+*.joblib
+*.h5
+
+# ─── Logs ─────────────────────────────────────────────────────────────
+*.log
+logs/
