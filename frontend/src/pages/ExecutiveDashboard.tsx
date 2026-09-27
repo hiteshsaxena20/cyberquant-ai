@@ -163,7 +163,7 @@ export default function ExecutiveDashboard() {
             Top Financial Risks
           </h3>
           <div className="space-y-3">
-            {data.top_assets.slice(0, 6).map((asset: any, i: number) => (
+            {(data.top_assets || []).slice(0, 6).map((asset: any, i: number) => (
               <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-dark-800/50 hover:bg-dark-800 transition-colors">
                 <div className="flex items-center gap-3">
                   <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-dark-700 text-sm font-bold text-dark-300">
@@ -192,10 +192,10 @@ export default function ExecutiveDashboard() {
               Control Effectiveness
             </h3>
             <div className="space-y-3">
-              {data.control_effectiveness.slice(0, 5).map((ctrl: any, i: number) => (
+              {(data.control_effectiveness || []).slice(0, 5).map((ctrl: any, i: number) => (
                 <div key={i} className="space-y-1">
                   <div className="flex justify-between text-sm">
-                    <span className="text-dark-300">{ctrl.name}</span>
+                    <span className="text-dark-300">{ctrl.name || ctrl.control}</span>
                     <span className={`font-mono font-semibold ${
                       ctrl.effectiveness >= 80 ? 'text-green-400' :
                       ctrl.effectiveness >= 60 ? 'text-yellow-400' : 'text-red-400'
@@ -222,7 +222,7 @@ export default function ExecutiveDashboard() {
           <div className="glass-card p-6">
             <h3 className="text-lg font-semibold mb-4">Compliance Posture</h3>
             <div className="grid grid-cols-2 gap-3">
-              {data.compliance_summary.map((fw: any, i: number) => (
+              {(data.compliance_summary || []).map((fw: any, i: number) => (
                 <div key={i} className="p-3 rounded-xl bg-dark-800/50 text-center">
                   <p className="text-2xl font-bold text-cyber-400">{fw.score}%</p>
                   <p className="text-xs text-dark-400 mt-1">{fw.framework.replace('Framework', '').trim()}</p>
